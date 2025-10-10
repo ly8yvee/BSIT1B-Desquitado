@@ -1,7 +1,7 @@
 for lybag in range(1,11,1):
     for x in range(1, lybag ,1):
         print(x, end=" ")
-    print(i)
+    print(lybag)
 
 for libag in range(1,11,1):
     for x in range(1, libag ,1):
