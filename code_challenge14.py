@@ -27,6 +27,7 @@ while True:
 
         first_name = input('pleaase input Styudent First Name ---> ').upper()
         second_name = input('please input Student Second Name ---> ').upper()
+        last_name = input('please input Student Last Name ---> ').upper()
         age = eval(input('input student age ---> '))
         course = input('input student course ---> ').upper()
         section = input('input student section ---> ').upper()
