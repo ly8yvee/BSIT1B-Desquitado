@@ -1,5 +1,5 @@
 import os
-
+import json
 
 os.system('cls')
 print('STUDENT INFORMATION SYSTEM')
@@ -27,7 +27,6 @@ while True:
 
         first_name = input('pleaase input Styudent First Name ---> ').upper()
         second_name = input('please input Student Second Name ---> ').upper()
-        last_name = input('please input Student Last Name ---> ').upper()
         age = eval(input('input student age ---> '))
         course = input('input student course ---> ').upper()
         section = input('input student section ---> ').upper()
@@ -45,16 +44,89 @@ while True:
             print(f'STUDENT ID - {a}, INFORMATION - {r}')
         continue
     elif choice == 'c':
-        pass
+        os.system('cls')
+
+        print('SEARCH STUDENT RECORD')
+
+        search_id = input('input Student ID for search ---> ').lower()
+
+        for each_id in student_record.keys():
+            if search_id in student_record.keys():
+                print("=========================================")
+                print('RECORD FOUND for ID {search_id}')
+                # to print the student for the serached ID
+                for a in student_record[search_id]:
+                    print(f' --- {a}')
+                print("=========================================")
+            else:
+                print('\n\nNO RECORD FOUND')
+            break
         continue
     elif choice == 'd':
-        pass
+        os.system('cls')
+
+        print('DELETE STUDENT RECORD')
+
+        search_id = input('input Student ID for search ---> ').lower()
+
+        for each_id in student_record.keys():
+            if search_id in student_record.keys():
+                print("=========================================")
+                print('RECORD FOUND for ID {search_id} ')
+                # to print the student for the serached ID
+                for a in student_record[search_id]:
+                    print(f' --- {a}')
+                print("=========================================")
+                # .pop() to delete an item
+                student_record.pop(search_id)
+            else:
+                print('\n\nNO RECORD FOUND')
+            break
         continue
     elif choice == 'e':
-        pass
+        os.system('cls')
+
+        print('EDIT/MODIFY STUDENT RECORD')
+
+        search_id = input('input Student ID for search ---> ').lower()
+
+        for each_id in student_record.keys():
+            if search_id in student_record.keys():
+                print("=========================================")
+                print('RECORD FOUND for ID {search_id}')
+                # to print the student for the serached ID
+                for a in student_record[search_id]:
+                    print(f' --- {a}')
+                print("=========================================")
+                #new set of value for serach id
+                first_name = input('pleaase input Styudent First Name ---> ').upper()
+                second_name = input('please input Student Second Name ---> ').upper()
+                age = eval(input('input student age ---> '))
+                course = input('input student course ---> ').upper()
+                section = input('input student section ---> ').upper()
+
+                student_record[search_id][0] = first_name
+                student_record[search_id][1] = second_name
+                student_record[search_id][2] = age
+                student_record[search_id][3] = course
+                student_record[search_id][4] = section
+
+                print('updated')
+
+            else:
+                print('\n\nNO RECORD FOUND')
+            break
+
         continue
     elif choice == 'f':
-        pass
+        print('EXPORT STUIDENT DATA')
+        #JSON JAVASCRIPT OBJECT NOTATION
+
+        with open('student_record.json', 'w') as new_file:
+            json.dump(student_record,new_file, indent=4)
+
+        print('\n\nDATA EXPORTED TO JSON')
+        
         continue
     elif choice == 'g':
         print('SYSTEM EXIT')
