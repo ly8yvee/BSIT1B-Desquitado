@@ -35,19 +35,19 @@ def add():
     num1 = float(u_entry.get())
     num2 = float(p_entry.get())
     total = num1 + num2
-    result.config(text=f"the division of {num1} + {num2} is {total}")
+    result.config(text=f"the sum of {num1} + {num2} is {total}")
 
 def subtract():
     num1 = float(u_entry.get())
     num2 = float(p_entry.get())
     total = num1 - num2
-    result.config(text=f"the division of {num1} - {num2} is {total}")
+    result.config(text=f"the difference of {num1} - {num2} is {total}")
 
 def multiply():
     num1 = float(u_entry.get())
     num2 = float(p_entry.get())
     total = num1 * num2
-    result.config(text=f"the multiply of {num1} * {num2} is {total}")
+    result.config(text=f"the product of {num1} * {num2} is {total}")
 
 def division():
     num1 = float(u_entry.get())
