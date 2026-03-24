@@ -4,12 +4,11 @@ from tkinter import messagebox
 window = Tk()
 window.title("DESQUITADO HO EXAM")
 window.geometry("400x300")
-window.configure(bg="purple", cursor="cross")
 
 stored_username = ""
 stored_password = ""
 
-def open_register(self):
+def open_register():
     reg = Toplevel(window)
     reg.title("Register")
     reg.geometry("350x250")
